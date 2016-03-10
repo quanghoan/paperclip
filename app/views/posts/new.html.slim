@@ -1,0 +1,9 @@
+= form_for @post, html: {multipart: true} do |f|
+	= f.label "Tittle"
+	= f.text_field :title	
+	br= f.label "Body"
+	= f.text_field :body
+	br= f.label "Image"
+	= f.file_field :image
+	br= f.submit
+
