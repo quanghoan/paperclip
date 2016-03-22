@@ -8,7 +8,6 @@ class PostsController < ApplicationController
   end
 
   def create
-  	# byebug
   	@post = Post.new(post_params)
   	if @post.save
   		flash[:success]  = "created successfully."
@@ -17,6 +16,11 @@ class PostsController < ApplicationController
   		flash[:error] = "something wrong."
   		render :new
   	end	
+  end
+
+  def destroy
+    Post.find(params[:id]).destroy
+    redirect_to request.referrer
   end
 
   private

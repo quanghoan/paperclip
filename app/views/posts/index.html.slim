@@ -1,2 +1,9 @@
-- @posts.each do |post|
-	br= link_to image_tag(post.image.url(:med)), post.image.url
+
+h1 listing posts
+div class="col-md-6 col-md-offset-3"
+	= link_to "New", new_post_path
+	- @posts.each do |post|
+		br= post.title
+		br= post.body
+		br= link_to image_tag(post.image.url(:med)), post.image.url
+		= link_to "Delete", post, method: :delete, data: {confirm: "Are you sure?"}

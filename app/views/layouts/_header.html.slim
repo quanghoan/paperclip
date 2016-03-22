@@ -1,0 +1,13 @@
+header class="navbar navbar-fixed-top navbar-inverse"
+  .navbar-header
+    img id="navbar-brand-image"
+    = link_to "hoandq", root_path
+  nav
+    p class="navbar-text pull-right"
+      - if user_signed_in?
+        strong
+          = link_to "Sign out", destroy_user_session_path, method: 'delete'
+      - else
+        = link_to "Sign up", new_user_registration_path
+        =" | "
+        = link_to "Login", new_user_session_path

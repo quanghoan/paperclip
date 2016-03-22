@@ -7,6 +7,14 @@ html
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   body
-    = yield
-    - flash.each do |message|
-      =message 
+    .container
+      = render 'layouts/header'
+      - if notice
+        p class="alert alert-success"
+          = notice
+      - if alert
+        p class="alert alert-danger"
+          = alert   
+    .post-layout
+      = yield
+    

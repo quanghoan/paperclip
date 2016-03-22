@@ -13,3 +13,22 @@
  *= require_tree .
  *= require_self
  */
+@import "bootstrap-sprockets";
+@import "bootstrap";
+#navbar-brand-image{
+	content:url("draw.png");
+  width: 26%;
+  margin-left: 30px;
+}
+#leftmenuinnerinner {
+  overflow-y: scroll;
+}
+#leftmenuinnerinner {
+  height: 100%;
+  width: 100%;
+  padding-top: 20px;
+  overflow-y: hidden;
+}
+.w3-light-grey {
+  color: #000 !important;
+}  
